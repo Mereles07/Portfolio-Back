@@ -53,7 +53,7 @@ public class PersonaControlador {
         return new ResponseEntity(new Mensaje("Educacion eliminada"), HttpStatus.OK);
     }*/
     
-    @PostMapping("/create")
+    @PostMapping("/personas/crear")
     public ResponseEntity<?> create(@RequestBody dtoPersona dtopersona){
         if(StringUtils.isBlank(dtopersona.getNombre()))
             return new ResponseEntity(new Mensaje("El nombre es obligatorio"), HttpStatus.BAD_REQUEST);
