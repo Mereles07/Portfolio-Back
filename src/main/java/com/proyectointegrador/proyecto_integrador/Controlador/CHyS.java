@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/skill")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://frontendportfolio-edfe4.web.app")
 public class CHyS {
     @Autowired
     SHyS sHyS;
@@ -32,7 +32,7 @@ public class CHyS {
         return new ResponseEntity(list, HttpStatus.OK);
     }
 
-    @GetMapping("detail/{id}")
+    @GetMapping("/detail/{id}")
     public ResponseEntity<HyS> getById(@PathVariable("id") int id) {
         if (!sHyS.existsById(id)) {
             return new ResponseEntity(new Mensaje("No existe"), HttpStatus.NOT_FOUND);

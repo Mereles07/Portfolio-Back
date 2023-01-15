@@ -20,8 +20,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("explab")
-@CrossOrigin(origins = "http://localhost:4200")
+@RequestMapping("/explab")
+@CrossOrigin(origins = "https://frontendportfolio-edfe4.web.app")
 public class CExperiencia {
     @Autowired
     SExperiencia_Laboral sExperiencia_Laboral;
@@ -32,7 +32,7 @@ public class CExperiencia {
         return new ResponseEntity(list, HttpStatus.OK);
     }
     
-    @GetMapping("detail/{id}")
+    @GetMapping("/detail/{id}")
     public ResponseEntity<Experiencia_Laboral> getById(@PathVariable("id") int id){
         if(!sExperiencia_Laboral.existsById(id))
             return new ResponseEntity(new Mensaje("No existe"), HttpStatus.NOT_FOUND);
