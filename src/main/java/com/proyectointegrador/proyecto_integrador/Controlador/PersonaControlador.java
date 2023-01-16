@@ -62,7 +62,7 @@ public class PersonaControlador {
         Persona persona = new Persona(dtopersona.getNombre(), dtopersona.getApellido(), dtopersona.getDescripcion(), dtopersona.getImg());
         personaServicio.save(persona);
         
-        return new ResponseEntity(new Mensaje("Experiencia agregada"), HttpStatus.OK);
+        return new ResponseEntity(new Mensaje("Persona agregada"), HttpStatus.OK);
     }
     
     @PreAuthorize("hasRole('ADMIN')")
